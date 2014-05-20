@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <package >
-  <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>Initial set of extensions for xUnit</releaseNotes>
-    <copyright>Copyright 2014</copyright>
-    <tags>xUnit UnitTesting Extensions TDD</tags>
-  </metadata>
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<summary>$description$</summary>
+		<description>$description$</description>
+		<releaseNotes>Initial set of extensions for xUnit</releaseNotes>
+		<copyright>Copyright 2014</copyright>
+		<tags>xUnit UnitTesting Extensions TDD</tags>
+		<licenseUrl>https://raw.githubusercontent.com/iQuarc/xUnitEx/master/MIT.md</licenseUrl>
+		<projectUrl>https://github.com/iQuarc/xUnitEx</projectUrl>
+	</metadata>
 </package>
