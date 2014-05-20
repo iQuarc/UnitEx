@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("iQuarc.xUnitEx")]
+[assembly: AssemblyTitle("iQuarc xUnit Extensions")]
 [assembly: AssemblyDescription("An utility library which extends xUnit framework")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("iQuarc")]
