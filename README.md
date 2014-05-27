@@ -17,7 +17,7 @@ Elements are equal if their values are equal, not if they refer to the same obje
 	AssertEx.AreEquivalent(e, "b", "a");
 
 
-**AreEquivalent<T>(IEnumerable<T> actual, Func<T, T, bool> equality, params T[] expected)**
+**AssertEx.AreEquivalent<T>(IEnumerable<T> actual, Func<T, T, bool> equality, params T[] expected)**
 
 Verifies that the specified collections are equivalent by using a custom equality function.
 Two collections are equivalent if they have the same elements in the same quantity, but in any order.
@@ -40,9 +40,41 @@ A set of extensions for exception tests.
 
 **AssertEx.ShouldThrow<TException>(this Action act)**
 
- Assertion that fails with the specified message if the specified Action throws the specified type of exception (TException).
- If other types of exceptions are thrown or no exception is thrown, the assert succeeds.
+ Assertion that fails if the specified Action does not throw the specified type of exception (TException).
+ If other types of exceptions are thrown or no exception is thrown, the assert fails.
 
 	ApplicationException ex = new ApplicationException();
     Action act = () => { throw ex; };
     act.ShouldThrow<ApplicationException>();
+
+**AssertEx.ShouldThrow<TException>(this Action act, string message)**
+
+ Assertion that fails with the specified message if the specified Action does not throw the specified type of exception (TException).
+ If other types of exceptions are thrown or no exception is thrown, the assert fails.
+
+	ApplicationException ex = new ApplicationException();
+    Action act = () => { throw ex; };
+    act.ShouldThrow<ApplicationException>("Method did not throw an ApplicationException");
+
+**AssertEx.ShouldNotThrow(this Action act)**
+
+Assertion fails if any type of exception is thrown.
+
+	Action act = () => { };
+	act.ShouldNotThrow();
+
+**AssertEx.ShouldNotThrow<TException>(this Action act)**
+
+Assertion that fails if the specified Action throws the specified type of exception (TException).
+If other types of exceptions are thrown or no exception is thrown, the assert succeeds.
+
+	Action act = () => { throw new InvalidOperationException(); };
+	act.ShouldNotThrow<ArgumentException>();
+
+**AssertEx.ShouldNotThrow<TException>(this Action act, string message)**
+
+Assertion that fails with the specified message if the specified Action throws the specified type of exception (TException) or a derived type.
+If other types of exceptions are thrown or no exception is thrown, the assert succeeds.
+
+	Action act = () => { throw new InvalidOperationException(); };
+	act.ShouldNotThrow<ArgumentException>("ArgumentException was thrown when it shouldn't have been.");
